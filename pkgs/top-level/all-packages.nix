@@ -17004,7 +17004,9 @@ with pkgs;
     inherit (darwin.apple_sdk.frameworks) Security SystemConfiguration;
   };
   cargo-benchcmp = callPackage ../development/tools/rust/cargo-benchcmp { };
-  cargo-binstall = callPackage ../development/tools/rust/cargo-binstall { };
+  cargo-binstall = callPackage ../development/tools/rust/cargo-binstall {
+    inherit (rustPackages_1_76) rustPlatform;
+  };
   cargo-bisect-rustc = callPackage ../development/tools/rust/cargo-bisect-rustc {
     inherit (darwin.apple_sdk.frameworks) Security;
   };
